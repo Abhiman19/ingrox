@@ -50,9 +50,9 @@ export default function SignupPage() {
   return (
     <div className="auth-wrapper">
       <div className="auth-card">
-        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+        <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <Link href="/" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 60, width: 'auto' }} />
+            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 85, width: 'auto' }} />
           </Link>
         </div>
         <div className="auth-title">Create your account</div>

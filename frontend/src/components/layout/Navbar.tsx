@@ -30,7 +30,7 @@ export default function Navbar({ variant = 'app' }: Props) {
     return (
       <nav style={navStyle}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 44, width: 'auto', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 60, width: 'auto', objectFit: 'contain' }} />
         </Link>
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <a href="#features" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Features</a>
@@ -45,7 +45,7 @@ export default function Navbar({ variant = 'app' }: Props) {
   return (
     <nav style={navStyle}>
       <Link href="/dashboard" style={{ display: 'flex', alignItems: 'center' }}>
-        <img src="/logo.png" alt="Ingrox Logo" style={{ height: 38, width: 'auto', objectFit: 'contain' }} />
+        <img src="/logo.png" alt="Ingrox Logo" style={{ height: 50, width: 'auto', objectFit: 'contain' }} />
       </Link>
       <div className="nav-links" style={{ display: 'flex', gap: 4 }}>
         <Link href="/dashboard" style={linkStyle(path === '/dashboard')}>Dashboard</Link>
