@@ -59,7 +59,7 @@ function SetupContent() {
       {/* Minimal nav */}
       <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '13px 28px', borderBottom: '0.5px solid var(--gray-border)', background: 'var(--bg-primary)' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 24, width: 'auto' }} />
+          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 32, width: 'auto' }} />
         </Link>
         <div style={{ display: 'flex', gap: 6, overflowX: 'auto', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
           {steps.map((s) => (

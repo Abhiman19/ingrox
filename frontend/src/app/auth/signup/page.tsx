@@ -33,8 +33,13 @@ export default function SignupPage() {
       await signup(form.email, form.password);
       showToast('Account created! Setting up your business.', 'success');
       router.push('/setup');
-    } catch (err) {
-      showToast(getErrorMessage(err), 'error');
+    } catch (err: any) {
+      const msg = getErrorMessage(err);
+      if (msg.includes('Network Error') || msg.includes('404')) {
+        showToast('Network Error: Please check your NEXT_PUBLIC_API_URL settings in Vercel.', 'error');
+      } else {
+        showToast(msg, 'error');
+      }
       setLoading(false);
     }
   };
@@ -47,7 +52,7 @@ export default function SignupPage() {
       <div className="auth-card">
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <Link href="/" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 42, width: 'auto' }} />
+            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 60, width: 'auto' }} />
           </Link>
         </div>
         <div className="auth-title">Create your account</div>

@@ -37,7 +37,7 @@ export default function LoginPage() {
       <div className="auth-card">
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <Link href="/" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 42, width: 'auto' }} />
+            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 60, width: 'auto' }} />
           </Link>
         </div>
         <div className="auth-title">Welcome back</div>

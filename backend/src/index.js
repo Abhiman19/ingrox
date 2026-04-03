@@ -34,11 +34,26 @@ app.use(helmet({
 // ── CORS ──────────────────────────────────────────────────────────────────────
 const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:3000',
+  'https://ingrox.vercel.app',
 ];
+
 app.use(cors({
   origin: (origin, cb) => {
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-    cb(new Error('Not allowed by CORS'));
+    // Log origin for debugging on the server
+    if (origin) logger.info(`CORS Check for origin: ${origin}`);
+    
+    // Allow if no origin (like mobile apps/curl) or if it's in the allowed list
+    const isAllowed = !origin || 
+                     allowedOrigins.includes(origin) || 
+                     origin.endsWith('.vercel.app') ||
+                     origin.includes('vercel');
+
+    if (isAllowed) {
+      return cb(null, true);
+    }
+    
+    logger.error(`CORS Blocked: ${origin}`);
+    cb(new Error(`CORS error: ${origin} not in allowed list`));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

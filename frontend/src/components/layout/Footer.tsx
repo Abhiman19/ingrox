@@ -26,8 +26,8 @@ export default function Footer({ variant = 'app' }: { variant?: 'public' | 'app'
         ))}
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <img src="/logo.png" alt="Ingrox" style={{ height: 18, width: 'auto', opacity: 0.8 }} />
-        <span style={{ fontSize: 12, color: 'var(--text-hint)' }}>© 2025 Ingrox</span>
+        <img src="/logo.png" alt="Ingrox" style={{ height: 28, width: 'auto', opacity: 0.9 }} />
+        <span style={{ fontSize: 13, color: 'var(--text-hint)' }}>© 2025 Ingrox</span>
       </div>
     </footer>
   );
