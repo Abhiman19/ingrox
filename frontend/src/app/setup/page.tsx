@@ -1,6 +1,7 @@
 'use client';
 // src/app/setup/page.tsx
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth, getErrorMessage } from '@/lib/AuthContext';
 import { useToast } from '@/hooks/useToast';
@@ -57,10 +58,12 @@ function SetupContent() {
     <div style={{ minHeight: '100vh', background: 'var(--gray-bg)', display: 'flex', flexDirection: 'column' }}>
       {/* Minimal nav */}
       <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '13px 28px', borderBottom: '0.5px solid var(--gray-border)', background: 'var(--bg-primary)' }}>
-        <span style={{ fontSize: 15, fontWeight: 600 }}>Grow<span style={{ color: 'var(--purple)' }}>lytics</span></span>
-        <div style={{ display: 'flex', gap: 6 }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 24, width: 'auto' }} />
+        </Link>
+        <div style={{ display: 'flex', gap: 6, overflowX: 'auto', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
           {steps.map((s) => (
-            <span key={s.label} style={{ padding: '4px 12px', borderRadius: 20, fontSize: 11, fontWeight: 500, background: s.done ? 'var(--teal-light)' : s.active ? 'var(--purple-light)' : 'var(--gray-bg)', color: s.done ? 'var(--teal)' : s.active ? 'var(--purple)' : 'var(--text-hint)', border: '0.5px solid var(--gray-border)' }}>
+            <span key={s.label} style={{ padding: '4px 10px', borderRadius: 20, fontSize: 10, fontWeight: 500, background: s.done ? 'var(--teal-light)' : s.active ? 'var(--purple-light)' : 'var(--gray-bg)', color: s.done ? 'var(--teal)' : s.active ? 'var(--purple)' : 'var(--text-hint)', border: '0.5px solid var(--gray-border)', whiteSpace: 'nowrap' }}>
               {s.done ? `${s.label} ✓` : s.label}
             </span>
           ))}

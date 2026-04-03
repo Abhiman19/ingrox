@@ -35,9 +35,9 @@ export default function LoginPage() {
   return (
     <div className="auth-wrapper">
       <div className="auth-card">
-        <div style={{ textAlign: 'center', marginBottom: 24 }}>
-          <Link href="/" style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)' }}>
-            Ing<span style={{ color: 'var(--purple)' }}>rox</span>
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="Ingrox Logo" style={{ height: 42, width: 'auto' }} />
           </Link>
         </div>
         <div className="auth-title">Welcome back</div>

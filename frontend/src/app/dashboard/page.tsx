@@ -97,7 +97,7 @@ function DashboardContent() {
       </div>
 
       {/* Metric cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 32 }}>
+      <div className="grid-3" style={{ display: 'grid', gap: 14, marginBottom: 32 }}>
         <MetricCard label="Revenue" value={fmt(data.currentRevenue)} change={data.revenueChange} />
         <MetricCard label="Orders" value={data.currentOrders.toString()} change={data.ordersChange} />
         <MetricCard label="Avg. order value" value={fmt(data.avgOrderValue)} change={Number(((data.avgOrderValue - (data.previousRevenue / (data.previousOrders || 1))) / (data.previousRevenue / (data.previousOrders || 1)) * 100).toFixed(1))} />

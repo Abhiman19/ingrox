@@ -21,6 +21,15 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (r) => r,
   (err) => {
+    // Debug logging for network/API errors
+    console.error('[API Error]', {
+      url: err.config?.url,
+      method: err.config?.method,
+      status: err.response?.status,
+      message: err.message,
+      baseUrl: err.config?.baseURL,
+    });
+
     if (err.response?.status === 401) {
       Cookies.remove('token');
       if (typeof window !== 'undefined') window.location.href = '/auth/login';

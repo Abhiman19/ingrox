@@ -16,9 +16,9 @@ const nextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data:",
-              "connect-src 'self' " + (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'),
-              "font-src 'self'",
+              "img-src 'self' data: https:",
+              "connect-src 'self' https: " + (process.env.NEXT_PUBLIC_API_URL || ''),
+              "font-src 'self' data:",
             ].join('; '),
           },
           {

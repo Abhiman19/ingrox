@@ -29,10 +29,10 @@ export default function Navbar({ variant = 'app' }: Props) {
   if (variant === 'public') {
     return (
       <nav style={navStyle}>
-        <Link href="/" style={{ fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>
-          Ing<span style={{ color: 'var(--purple)' }}>rox</span>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 32, width: 'auto', objectFit: 'contain' }} />
         </Link>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <a href="#features" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Features</a>
           <a href="#how-it-works" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>How it works</a>
           <Link href="/auth/login" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Login</Link>
@@ -44,10 +44,10 @@ export default function Navbar({ variant = 'app' }: Props) {
 
   return (
     <nav style={navStyle}>
-      <Link href="/dashboard" style={{ fontSize: 15, fontWeight: 600, color: 'var(--text-primary)' }}>
-        Ing<span style={{ color: 'var(--purple)' }}>rox</span>
+      <Link href="/dashboard" style={{ display: 'flex', alignItems: 'center' }}>
+        <img src="/logo.png" alt="Ingrox Logo" style={{ height: 28, width: 'auto', objectFit: 'contain' }} />
       </Link>
-      <div style={{ display: 'flex', gap: 4 }}>
+      <div className="nav-links" style={{ display: 'flex', gap: 4 }}>
         <Link href="/dashboard" style={linkStyle(path === '/dashboard')}>Dashboard</Link>
         <Link href="/dashboard/insights" style={linkStyle(path === '/dashboard/insights')}>Insights</Link>
         <Link href="/input" style={linkStyle(path === '/input')}>Add data</Link>
