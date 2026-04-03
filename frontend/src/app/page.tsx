@@ -18,7 +18,7 @@ function LandingContent() {
       <Navbar variant="public" />
 
       {/* Hero */}
-      <section className="responsive-hero" style={{ display: 'grid', gap: 40, padding: '64px 80px 56px', alignItems: 'center', maxWidth: 1100, margin: '0 auto', width: '100%' }}>
+      <section className="responsive-hero" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, padding: '64px 80px 56px', alignItems: 'center', maxWidth: 1100, margin: '0 auto', width: '100%' }}>
         <div>
           <div style={{ display: 'inline-block', background: 'var(--purple-light)', color: 'var(--purple-dark)', padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 500, marginBottom: 16 }}>
             Built for D2C founders
@@ -65,7 +65,7 @@ function LandingContent() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--purple)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>Features</div>
           <h2 style={{ fontSize: 26, fontWeight: 500, marginBottom: 32 }}>Everything you need, nothing you don't</h2>
-          <div className="responsive-grid-3" style={{ display: 'grid', gap: 16 }}>
+          <div className="responsive-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {[
               { icon: '📊', bg: '#E6F1FB', title: 'See what changed', desc: 'Track revenue and orders week over week at a glance. No setup required.' },
               { icon: '🧠', bg: 'var(--purple-light)', title: 'Know why', desc: 'Understand the reason behind every change — not just the numbers.' },
@@ -86,7 +86,7 @@ function LandingContent() {
         <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-block', fontSize: 11, fontWeight: 600, color: 'var(--purple-dark)', background: 'var(--purple-light)', padding: '4px 12px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 12 }}>How it works</div>
           <h2 style={{ fontSize: 32, fontWeight: 600, marginBottom: 48, color: 'var(--text-primary)' }}>Three steps to clarity</h2>
-          <div className="responsive-grid-3" style={{ display: 'grid', gap: 32 }}>
+          <div className="responsive-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
             {[
               { n: '1', title: 'Enter your data', desc: 'Add revenue and orders for this week. First time? Also add last week.', icon: '📝' },
               { n: '2', title: 'We analyze it', desc: 'Our engine compares this week vs last, finds patterns, and generates insights.', icon: '⚙️' },
@@ -104,7 +104,7 @@ function LandingContent() {
       </section>
 
       {/* Trust bar */}
-      <div style={{ background: 'var(--purple-dark)', color: '#fff', padding: '18px 80px', display: 'flex', gap: 48, alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
+      <div className="responsive-trust-bar" style={{ background: 'var(--purple-dark)', color: '#fff', padding: '18px 80px', display: 'flex', gap: 48, alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
         {['Built for D2C founders', 'Simple. Fast. Actionable.', 'No spreadsheets required', 'Free to start'].map((t) => (
           <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 500 }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--teal-light)', flexShrink: 0 }} />
