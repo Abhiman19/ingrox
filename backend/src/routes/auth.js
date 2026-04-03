@@ -40,7 +40,7 @@ router.post('/signup', signupRules, async (req, res) => {
     if (exists.rows.length > 0) {
       return res.status(409).json({ error: 'Email already registered' });
     }
-    const passwordHash = await bcrypt.hash(password, 12);
+    const passwordHash = await bcrypt.hash(password, 10);
     const result = await pool.query(
       'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email, created_at',
       [email, passwordHash]
@@ -66,7 +66,7 @@ router.post('/login', loginRules, async (req, res) => {
     );
     const user = result.rows[0];
     // Use constant-time comparison to prevent timing attacks
-    const DUMMY_HASH = '$2a$12$dummyhashfornonexistentusers000000000000000000';
+    const DUMMY_HASH = '$2a$10$dummyhashfornonexistentusers000000000000000000';
     const hashToCompare = user ? user.password_hash : DUMMY_HASH;
     const match = await bcrypt.compare(password, hashToCompare);
     if (!user || !match) {
