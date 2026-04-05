@@ -16,11 +16,11 @@ export default function BlogPost3() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fff' }}>
       <Navbar variant="public" />
       
-      <main style={{ flex: 1, padding: '64px 24px' }}>
-        <article style={{ maxWidth: 720, margin: '0 auto' }}>
-          <header style={{ marginBottom: 48 }}>
-            <Link href="/blog" style={{ color: 'var(--purple)', fontSize: 14, fontWeight: 500, marginBottom: 16, display: 'inline-block' }}>← Back to Blog</Link>
-            <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.2, color: 'var(--text-primary)', marginBottom: 24 }}>How to Analyze Sales Data Without Technical Skills</h1>
+      <main style={{ flex: 1, padding: '32px 0' }}>
+        <article className="container" style={{ maxWidth: 800 }}>
+          <header style={{ marginBottom: 32 }}>
+            <Link href="/blog" style={{ color: 'var(--purple)', fontSize: 13, fontWeight: 500, marginBottom: 12, display: 'inline-block' }}>← Back to Blog</Link>
+            <h1 className="responsive-h1" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2, color: 'var(--text-primary)', marginBottom: 20 }}>How to Analyze Sales Data Without Technical Skills</h1>
             <div style={{ display: 'flex', gap: 16, color: 'var(--text-secondary)', fontSize: 14 }}>
               <span>March 2026</span>
               <span>•</span>
@@ -62,10 +62,10 @@ export default function BlogPost3() {
             
             <p style={{ marginBottom: 48 }}>That is the core philosophy behind <strong>Ingrox</strong>. We built a platform specifically for D2C founders who hate spreadsheets. Our AI analyzes your basic data points and instantly generates a plain-English report explaining exactly what changed and what you need to do next.</p>
 
-            <div style={{ background: 'var(--purple-light)', padding: 40, borderRadius: 12, textAlign: 'center', marginBottom: 40 }}>
-              <h3 style={{ fontSize: 24, fontWeight: 600, color: 'var(--purple-dark)', marginBottom: 16 }}>Ready to simplify your analytics?</h3>
-              <p style={{ fontSize: 16, color: 'var(--purple-dark)', marginBottom: 24 }}>Stop fighting with spreadsheets. Let our AI turn your sales data into clear, actionable growth strategies.</p>
-              <Link href="/auth/signup" className="btn btn-primary btn-lg">Try Ingrox For Free</Link>
+            <div className="card" style={{ background: 'var(--purple-light)', padding: '32px 24px', textAlign: 'center', marginBottom: 40 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 600, color: 'var(--purple-dark)', marginBottom: 12 }}>Ready to simplify your analytics?</h3>
+              <p style={{ fontSize: 15, color: 'var(--purple-dark)', marginBottom: 20 }}>Stop fighting with spreadsheets. Let our AI turn your sales data into clear, actionable growth strategies.</p>
+              <Link href="/auth/signup" className="btn btn-primary responsive-btn">Try Ingrox For Free</Link>
             </div>
           </div>
         </article>

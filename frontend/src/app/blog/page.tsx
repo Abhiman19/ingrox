@@ -37,10 +37,10 @@ export default function BlogIndex() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#F5F4F0' }}>
       <Navbar variant="public" />
       
-      <main style={{ flex: 1, padding: '64px 24px' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h1 style={{ fontSize: 40, fontWeight: 700, marginBottom: 16, color: 'var(--text-primary)' }}>The Growth Blog</h1>
-          <p style={{ fontSize: 18, color: 'var(--text-secondary)', marginBottom: 48, lineHeight: 1.6 }}>
+      <main style={{ flex: 1, padding: '32px 0' }}>
+        <div className="container" style={{ maxWidth: 800 }}>
+          <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 16, color: 'var(--text-primary)' }}>The Growth Blog</h1>
+          <p style={{ fontSize: 16, color: 'var(--text-secondary)', marginBottom: 32, lineHeight: 1.6 }}>
             Actionable advice, deep dives, and data-driven strategies for D2C founders looking to scale their ecommerce businesses.
           </p>
 

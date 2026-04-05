@@ -1,6 +1,9 @@
 // src/app/privacy/page.tsx
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import { AuthProvider } from '@/lib/AuthContext';
 
 export const metadata = {
   title: 'Privacy Policy – Ingrox',
@@ -11,13 +14,12 @@ export default function PrivacyPage() {
   const s = { fontSize: 14, color: '#555', lineHeight: 1.75, marginBottom: 16 };
   const h2: React.CSSProperties = { fontSize: 16, fontWeight: 500, marginBottom: 8, marginTop: 28, color: '#1a1a1a' };
   return (
-    <div style={{ minHeight: '100vh', background: '#F5F4F0' }}>
-      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '13px 40px', borderBottom: '0.5px solid rgba(0,0,0,0.1)', background: '#fff' }}>
-        <Link href="/" style={{ fontSize: 16, fontWeight: 600 }}>Ing<span style={{ color: '#534AB7' }}>rox</span></Link>
-        <Link href="/" style={{ fontSize: 13, color: '#555' }}>← Back to home</Link>
-      </nav>
-      <div style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ background: '#fff', borderRadius: 12, border: '0.5px solid rgba(0,0,0,0.1)', padding: '36px 40px' }}>
+    <AuthProvider>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#F5F4F0' }}>
+        <Navbar variant="public" />
+        <main style={{ flex: 1, padding: '32px 0' }}>
+      <div className="container" style={{ padding: '32px 0' }}>
+        <div style={{ background: '#fff', borderRadius: 12, border: '0.5px solid rgba(0,0,0,0.1)', padding: '24px 24px' }} className="card">
           <h1 style={{ fontSize: 24, fontWeight: 500, marginBottom: 6 }}>Privacy Policy</h1>
           <p style={{ fontSize: 12, color: '#888', marginBottom: 28 }}>Last updated: January 2025</p>
 
@@ -43,8 +45,11 @@ export default function PrivacyPage() {
 
           <h2 style={h2}>Contact</h2>
           <p style={s}>For any privacy questions, email <a href="mailto:info.growlytic@gmail.com" style={{ color: '#534AB7' }}>info.growlytic@gmail.com</a>.</p>
+          </div>
         </div>
-      </div>
+      </main>
+      <Footer variant="public" />
     </div>
+  </AuthProvider>
   );
 }

@@ -16,11 +16,11 @@ export default function BlogPost1() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fff' }}>
       <Navbar variant="public" />
       
-      <main style={{ flex: 1, padding: '64px 24px' }}>
-        <article style={{ maxWidth: 720, margin: '0 auto' }}>
-          <header style={{ marginBottom: 48 }}>
-            <Link href="/blog" style={{ color: 'var(--purple)', fontSize: 14, fontWeight: 500, marginBottom: 16, display: 'inline-block' }}>← Back to Blog</Link>
-            <h1 style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.2, color: 'var(--text-primary)', marginBottom: 24 }}>Why Your Ecommerce Sales Dropped (And How to Fix It)</h1>
+      <main style={{ flex: 1, padding: '32px 0' }}>
+        <article className="container" style={{ maxWidth: 800 }}>
+          <header style={{ marginBottom: 32 }}>
+            <Link href="/blog" style={{ color: 'var(--purple)', fontSize: 13, fontWeight: 500, marginBottom: 12, display: 'inline-block' }}>← Back to Blog</Link>
+            <h1 className="responsive-h1" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2, color: 'var(--text-primary)', marginBottom: 20 }}>Why Your Ecommerce Sales Dropped (And How to Fix It)</h1>
             <div style={{ display: 'flex', gap: 16, color: 'var(--text-secondary)', fontSize: 14 }}>
               <span>April 2026</span>
               <span>•</span>
@@ -54,10 +54,10 @@ export default function BlogPost1() {
             
             <p style={{ marginBottom: 48 }}>That is exactly why we built <strong>Ingrox</strong>. Instead of staring at spreadsheets, you simply enter your weekly numbers, and our AI immediately tells you <em>why</em> your sales dropped and exactly what to do next.</p>
 
-            <div style={{ background: 'var(--purple-light)', padding: 40, borderRadius: 12, textAlign: 'center', marginBottom: 40 }}>
-              <h3 style={{ fontSize: 24, fontWeight: 600, color: 'var(--purple-dark)', marginBottom: 16 }}>Ready to fix your sales drop?</h3>
-              <p style={{ fontSize: 16, color: 'var(--purple-dark)', marginBottom: 24 }}>Stop guessing what went wrong. Get clear, actionable sales insights in seconds.</p>
-              <Link href="/auth/signup" className="btn btn-primary btn-lg">Try Ingrox Free</Link>
+            <div className="card" style={{ background: 'var(--purple-light)', padding: '32px 24px', textAlign: 'center', marginBottom: 40 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 600, color: 'var(--purple-dark)', marginBottom: 12 }}>Ready to fix your sales drop?</h3>
+              <p style={{ fontSize: 15, color: 'var(--purple-dark)', marginBottom: 20 }}>Stop guessing what went wrong. Get clear, actionable sales insights in seconds.</p>
+              <Link href="/auth/signup" className="btn btn-primary responsive-btn">Try Ingrox Free</Link>
             </div>
           </div>
         </article>

@@ -28,11 +28,11 @@ export default function Navbar({ variant = 'app' }: Props) {
 
   if (variant === 'public') {
     return (
-      <nav style={navStyle}>
+      <nav style={navStyle} className="navbar">
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Ingrox Logo" style={{ height: 60, width: 'auto', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="Ingrox Logo" className="logo-img" style={{ height: 50, width: 'auto', objectFit: 'contain' }} />
         </Link>
-        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="nav-links">
           <a href="#features" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Features</a>
           <a href="#how-it-works" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>How it works</a>
           <Link href="/auth/login" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Login</Link>
@@ -43,22 +43,22 @@ export default function Navbar({ variant = 'app' }: Props) {
   }
 
   return (
-    <nav style={navStyle}>
-      <Link href="/dashboard" style={{ display: 'flex', alignItems: 'center' }}>
-        <img src="/logo.png" alt="Ingrox Logo" style={{ height: 50, width: 'auto', objectFit: 'contain' }} />
+    <nav style={navStyle} className="navbar">
+      <Link href="/dashboard" className="nav-brand">
+        <img src="/logo.png" alt="Ingrox Logo" className="logo-img" style={{ height: 35, width: 'auto' }} />
       </Link>
-      <div className="nav-links" style={{ display: 'flex', gap: 4 }}>
+      <div className="nav-links">
         <Link href="/dashboard" style={linkStyle(path === '/dashboard')}>Dashboard</Link>
         <Link href="/dashboard/insights" style={linkStyle(path === '/dashboard/insights')}>Insights</Link>
         <Link href="/input" style={linkStyle(path === '/input')}>Add data</Link>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div className="nav-user">
         {business && (
-          <span style={{ fontSize: 12, color: 'var(--text-hint)', maxWidth: 120, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <span className="business-name">
             {business.name}
           </span>
         )}
-        <div style={{ width: 30, height: 30, borderRadius: '50%', background: 'var(--purple-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 500, color: 'var(--purple-dark)' }}>
+        <div className="user-avatar">
           {initials}
         </div>
         <button onClick={logout} className="btn btn-ghost btn-sm" style={{ border: '0.5px solid var(--gray-border)', borderRadius: 'var(--radius-md)' }}>

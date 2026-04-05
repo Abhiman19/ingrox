@@ -17,16 +17,16 @@ export default function Footer({ variant = 'app' }: { variant?: 'public' | 'app'
     links.unshift({ label: 'About', href: '/about' }, { label: 'Contact', href: 'mailto:info.growlytic@gmail.com' });
   }
   return (
-    <footer style={s}>
-      <div style={{ display: 'flex', gap: 16 }}>
+    <footer style={s} className="footer">
+      <div className="footer-links">
         {links.map((l) => (
           <Link key={l.label} href={l.href} style={{ fontSize: 12, color: 'var(--text-hint)' }}>
             {l.label}
           </Link>
         ))}
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <img src="/logo.png" alt="Ingrox" style={{ height: 40, width: 'auto', opacity: 0.95 }} />
+      <div className="footer-brand">
+        <img src="/logo.png" alt="Ingrox" className="logo-img" style={{ height: 32, width: 'auto', opacity: 0.95 }} />
         <span style={{ fontSize: 13, color: 'var(--text-hint)' }}>© 2025 Ingrox</span>
       </div>
     </footer>

@@ -18,7 +18,7 @@ function LandingContent() {
       <Navbar variant="public" />
 
       {/* Hero */}
-      <section className="responsive-hero" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, padding: '64px 80px 56px', alignItems: 'center', maxWidth: 1100, margin: '0 auto', width: '100%' }}>
+      <section className="responsive-hero container">
         <div>
           <div style={{ display: 'inline-block', background: 'var(--purple-light)', color: 'var(--purple-dark)', padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 500, marginBottom: 16 }}>
             Built for D2C founders
@@ -29,15 +29,15 @@ function LandingContent() {
           <p style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: 28, maxWidth: 420 }}>
             Get clear insights from your business data — no complex dashboards, no spreadsheets. Just answers.
           </p>
-          <div style={{ display: 'flex', gap: 12 }}>
-            <Link href="/auth/signup" className="btn btn-primary btn-lg">Get started — it's free</Link>
-            <a href="#how-it-works" className="btn btn-outline btn-lg">See how it works</a>
+          <div className="hero-actions" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <Link href="/auth/signup" className="btn btn-primary btn-lg responsive-btn">Get started — it's free</Link>
+            <a href="#how-it-works" className="btn btn-outline btn-lg responsive-btn">See how it works</a>
           </div>
         </div>
 
         {/* Hero preview card */}
-        <div style={{ background: 'var(--gray-bg)', borderRadius: 'var(--radius-lg)', border: '0.5px solid var(--gray-border)', padding: 20 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
+        <div className="hero-preview" style={{ background: 'var(--gray-bg)', borderRadius: 'var(--radius-lg)', border: '0.5px solid var(--gray-border)', padding: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }} className="grid-2">
             {[
               { label: 'Revenue', value: '₹50,000', change: '▼ -12% vs last week', down: true },
               { label: 'Orders', value: '120', change: '▲ +8% vs last week', down: false },
@@ -61,11 +61,11 @@ function LandingContent() {
       </section>
 
       {/* Features */}
-      <section id="features" style={{ padding: '48px 80px', background: 'var(--gray-bg)', borderTop: '0.5px solid var(--gray-border)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+      <section id="features" style={{ background: 'var(--gray-bg)', borderTop: '0.5px solid var(--gray-border)' }}>
+        <div className="container" style={{ padding: '48px 0' }}>
           <div style={{ fontSize: 11, fontWeight: 500, color: 'var(--purple)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>Features</div>
           <h2 style={{ fontSize: 26, fontWeight: 500, marginBottom: 32 }}>Everything you need, nothing you don't</h2>
-          <div className="responsive-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <div className="responsive-grid-3">
             {[
               { icon: '📊', bg: '#E6F1FB', title: 'See what changed', desc: 'Track revenue and orders week over week at a glance. No setup required.' },
               { icon: '🧠', bg: 'var(--purple-light)', title: 'Know why', desc: 'Understand the reason behind every change — not just the numbers.' },
@@ -82,11 +82,11 @@ function LandingContent() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" style={{ padding: '64px 80px', background: '#fff', borderTop: '0.5px solid var(--gray-border)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
+      <section id="how-it-works" style={{ background: '#fff', borderTop: '0.5px solid var(--gray-border)' }}>
+        <div className="container" style={{ padding: '64px 0', textAlign: 'center' }}>
           <div style={{ display: 'inline-block', fontSize: 11, fontWeight: 600, color: 'var(--purple-dark)', background: 'var(--purple-light)', padding: '4px 12px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 12 }}>How it works</div>
           <h2 style={{ fontSize: 32, fontWeight: 600, marginBottom: 48, color: 'var(--text-primary)' }}>Three steps to clarity</h2>
-          <div className="responsive-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+          <div className="responsive-grid-3">
             {[
               { n: '1', title: 'Enter your data', desc: 'Add revenue and orders for this week. First time? Also add last week.', icon: '📝' },
               { n: '2', title: 'We analyze it', desc: 'Our engine compares this week vs last, finds patterns, and generates insights.', icon: '⚙️' },
@@ -104,7 +104,7 @@ function LandingContent() {
       </section>
 
       {/* Trust bar */}
-      <div className="responsive-trust-bar" style={{ background: 'var(--purple-dark)', color: '#fff', padding: '18px 80px', display: 'flex', gap: 48, alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
+      <div className="responsive-trust-bar" style={{ background: 'var(--purple-dark)', color: '#fff', padding: '18px 24px', display: 'flex', gap: '24px 48px', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
         {['Built for D2C founders', 'Simple. Fast. Actionable.', 'No spreadsheets required', 'Free to start'].map((t) => (
           <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 500 }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--teal-light)', flexShrink: 0 }} />
@@ -114,10 +114,12 @@ function LandingContent() {
       </div>
 
       {/* CTA */}
-      <section style={{ padding: '56px 80px', textAlign: 'center', background: '#fff' }}>
+      <section style={{ textAlign: 'center', background: '#fff' }}>
+        <div className="container" style={{ padding: '56px 0' }}>
         <h2 style={{ fontSize: 28, fontWeight: 500, marginBottom: 12 }}>Ready to understand your sales?</h2>
         <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 28 }}>Takes 2 minutes. No credit card required.</p>
-        <Link href="/auth/signup" className="btn btn-primary btn-lg responsive-btn">Start for free →</Link>
+          <Link href="/auth/signup" className="btn btn-primary btn-lg responsive-btn" style={{ margin: '0 auto' }}>Start for free →</Link>
+        </div>
       </section>
 
       <Footer variant="public" />

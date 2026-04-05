@@ -84,7 +84,7 @@ function DashboardContent() {
 
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
+      <div className="flex-between-responsive" style={{ marginBottom: 24 }}>
         <div>
           <div className="page-title">Dashboard</div>
           <div style={{ fontSize: 13, color: 'var(--text-hint)' }}>
@@ -97,7 +97,7 @@ function DashboardContent() {
       </div>
 
       {/* Metric cards */}
-      <div className="grid-3" style={{ display: 'grid', gap: 14, marginBottom: 32 }}>
+      <div className="grid-3" style={{ marginBottom: 32 }}>
         <MetricCard label="Revenue" value={fmt(data.currentRevenue)} change={data.revenueChange} />
         <MetricCard label="Orders" value={data.currentOrders.toString()} change={data.ordersChange} />
         <MetricCard label="Avg. order value" value={fmt(data.avgOrderValue)} change={Number(((data.avgOrderValue - (data.previousRevenue / (data.previousOrders || 1))) / (data.previousRevenue / (data.previousOrders || 1)) * 100).toFixed(1))} />
@@ -106,7 +106,8 @@ function DashboardContent() {
       {/* Quick comparison table */}
       <div className="card" style={{ marginBottom: 28 }}>
         <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 14 }}>This week vs last week</div>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+        <div className="table-wrapper">
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 400 }}>
           <thead>
             <tr style={{ borderBottom: '0.5px solid var(--gray-border)' }}>
               {['Metric', 'Last week', 'This week', 'Change'].map((h) => (
@@ -132,16 +133,17 @@ function DashboardContent() {
               </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
 
       {/* CTA to insights */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--purple-light)', border: '0.5px solid var(--purple-mid)', borderRadius: 'var(--radius-lg)', padding: '18px 22px' }}>
-        <div>
+      <div className="flex-between-responsive insights-cta">
+        <div className="text-left">
           <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--purple-dark)', marginBottom: 2 }}>View your insights</div>
           <div style={{ fontSize: 13, color: 'var(--purple)' }}>See what changed, why it happened, and what to do next.</div>
         </div>
-        <Link href="/dashboard/insights" className="btn" style={{ background: 'var(--purple)', color: '#fff' }}>View insights →</Link>
+        <Link href="/dashboard/insights" className="btn btn-primary responsive-btn">View insights →</Link>
       </div>
     </>
   );
@@ -153,7 +155,7 @@ export default function DashboardPage() {
       <ToastProvider>
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <Navbar />
-          <div style={{ flex: 1, padding: '28px 0' }}>
+          <div style={{ flex: 1, padding: '24px 0' }}>
             <div className="container" style={{ maxWidth: 900 }}>
               <DashboardContent />
             </div>

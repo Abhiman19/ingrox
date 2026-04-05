@@ -10,10 +10,11 @@ function SupportContent() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#F5F4F0' }}>
       <Navbar variant="public" />
       
-      <main style={{ flex: 1, padding: '64px 24px' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', background: '#fff', borderRadius: 12, border: '0.5px solid rgba(0,0,0,0.1)', padding: '48px' }}>
-          <h1 style={{ fontSize: 32, fontWeight: 600, marginBottom: 24, color: 'var(--text-primary)' }}>Support</h1>
-          <div style={{ height: 4, width: 40, background: 'var(--purple)', borderRadius: 2, marginBottom: 32 }}></div>
+      <main style={{ flex: 1, padding: '32px 0' }}>
+        <div className="container" style={{ maxWidth: 720 }}>
+          <div className="card" style={{ padding: '32px 24px' }}>
+            <h1 style={{ fontSize: 32, fontWeight: 600, marginBottom: 24, color: 'var(--text-primary)' }}>Support</h1>
+            <div style={{ height: 4, width: 40, background: 'var(--purple)', borderRadius: 2, marginBottom: 32 }}></div>
           
           <div style={{ fontSize: 16, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
             <p style={{ marginBottom: 24 }}>
@@ -40,6 +41,7 @@ function SupportContent() {
             <div style={{ marginBottom: 24 }}>
               <h3 style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 8 }}>Is my data secure?</h3>
               <p>Yes. Your financial data is stored securely and is only used to generate insights specifically for your account. We never sell your data.</p>
+            </div>
             </div>
           </div>
         </div>

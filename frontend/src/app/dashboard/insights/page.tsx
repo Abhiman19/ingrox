@@ -132,21 +132,21 @@ function InsightsContent() {
 
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
+      <div className="flex-between-responsive" style={{ marginBottom: 24 }}>
         <div>
           <div className="page-title">Insights</div>
           <div style={{ fontSize: 13, color: 'var(--text-hint)' }}>Based on your latest data · {insights.length} insight{insights.length !== 1 ? 's' : ''}</div>
         </div>
-        <Link href="/input" className="btn btn-primary btn-sm">+ Add new data</Link>
+        <Link href="/input" className="btn btn-primary btn-sm responsive-btn">+ Add new data</Link>
       </div>
 
       {insights.map((ins) => (
         <InsightCard key={ins.id} insight={ins} onFeedback={handleFeedback} />
       ))}
 
-      <div style={{ marginTop: 20, padding: '14px 20px', background: 'var(--gray-bg)', borderRadius: 'var(--radius-md)', border: '0.5px solid var(--gray-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="flex-between-responsive" style={{ marginTop: 20, padding: '20px', background: 'var(--gray-bg)', borderRadius: 'var(--radius-md)', border: '0.5px solid var(--gray-border)' }}>
         <span style={{ fontSize: 13, color: 'var(--text-secondary)' }}>Come back next week with new data.</span>
-        <Link href="/input" className="btn btn-outline btn-sm">Add next week →</Link>
+        <Link href="/input" className="btn btn-outline btn-sm responsive-btn">Add next week →</Link>
       </div>
     </>
   );
@@ -158,8 +158,8 @@ export default function InsightsPage() {
       <ToastProvider>
         <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <Navbar />
-          <div style={{ flex: 1, padding: '28px 0' }}>
-            <div className="container" style={{ maxWidth: 780 }}>
+          <div style={{ flex: 1, padding: '24px 0' }}>
+            <div className="container" style={{ maxWidth: 800 }}>
               <InsightsContent />
             </div>
           </div>

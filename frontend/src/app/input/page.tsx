@@ -134,7 +134,7 @@ function InputContent() {
           <div className="page-subtitle">Add numbers for this week — we'll handle the comparison automatically.</div>
 
           {/* Tabs */}
-          <div style={{ display: 'flex', gap: 6, marginBottom: 24 }}>
+          <div style={{ display: 'flex', gap: 6, marginBottom: 24, overflowX: 'auto', paddingBottom: 8, msOverflowStyle: 'none', scrollbarWidth: 'none' }} className="no-scrollbar">
             <button style={tabStyle('manual')} onClick={() => setTab('manual')}>Manual entry</button>
             <button style={tabStyle('csv')} onClick={() => setTab('csv')}>Upload CSV</button>
             <button style={tabStyle('paste')} onClick={() => setTab('paste')}>Paste data</button>
@@ -167,7 +167,7 @@ function InputContent() {
           {/* Manual form (always shown, prefilled by csv/paste) */}
           {tab === 'manual' && (
             <form onSubmit={handleSubmit} noValidate>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
+              <div className="responsive-grid-2" style={{ gap: 16, marginBottom: 20 }}>
                 {/* Current week */}
                 <div className="card">
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
